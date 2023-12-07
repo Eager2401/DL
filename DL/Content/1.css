@@ -1,0 +1,27 @@
+﻿h2 {
+    color: white;
+    font-family: Merriweather;
+}
+
+th {
+    color: white;
+    font-family: Merriweather;
+}
+
+td {
+    color: white;
+    font-family: Merriweather;
+}
+
+p {
+    font-size: 20px;
+    font-family: Merriweather;
+    text-decoration: none;
+    color: white;
+}
+
+.button-row {
+    display: flex;
+    line-height: 40px;
+    margin-left: -5px;
+}

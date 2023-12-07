@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DL.Models.ThongTinSan>
+
+@{
+    ViewBag.Title = "Đăng Nhập Quản Lí";
+}
+<link href="~/Content/1.css" rel="stylesheet" />
+<h2>Danh Sách Sân Hiện Có</h2>
+
+
+<div class="button-row">
+    @using (Html.BeginForm("DongTatCaSan", "SanBong", FormMethod.Post))
+    {
+        <input type="submit" value="Đóng Tất Cả Sân" />
+    }
+    @using (Html.BeginForm("MoChoThueSan", "SanBong", FormMethod.Post))
+    {
+        <input type="submit" value=" Mở Cho Thuê Sân" />
+    }
+</div>
+

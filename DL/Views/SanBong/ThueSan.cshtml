@@ -1,0 +1,12 @@
+﻿@model DL.Models.ThongTinSan
+@{
+    ViewBag.Title = "Thuê Sân";
+}
+@using (Html.BeginForm("ThueSan", "SanBong", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.SoSan)
+    @Html.TextBoxFor(model => model.SoSan)
+    <br />
+    <input type="submit" value="Thuê Sân" />
+}
+

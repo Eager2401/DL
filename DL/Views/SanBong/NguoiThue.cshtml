@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DL.Models.ThongTinSan>
+@{
+    ViewBag.Title = "Đăng Nhập Người Dùng";
+}
+
+<link href="~/Content/1.css" rel="stylesheet" />
+<h2>Thông Tin Sân Hiện Có</h2>
+
+<p>
+    @Html.ActionLink("Thuê Sân", "ThueSan")
+</p>
+<table class="table table-bordered" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoSan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaThue60Phut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaThue90phut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoSan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaThue60Phut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaThue90phut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrang)
+            </td>
+        </tr>
+    }
+
+</table>
+
