@@ -1,0 +1,18 @@
+﻿@model DL.Models.HoaDon
+@{
+    ViewBag.Tittle = "Hiển thị hóa đơn";
+}
+
+<!DOCTYPE html>
+
+<h2>Thông tin hóa đơn</h2>
+
+<p><strong>Mã hóa đơn: </strong>@Model.MaHD</p>
+<p><strong>Mã người dùng: </strong>@Model.TaiKhoanUser</p>
+<p><strong>Mã sân: </strong>@Model.MaSan</p>
+<p><strong>Loại sân thuê: </strong>@Model.loaiSan</p>
+<p><strong>Khoảng thời gian thuê: </strong>@Model.GioBatDau - @Model.GioKetThuc</p>
+<p><strong>Số tiền phải trả: </strong>@Model.TinhTien</p>
+<p><strong>Trạng thái: </strong>@Model.TinhTrangHD</p>
+
+<p><a asp-controller="HoaDon" asp-action="ChinhSuaHD" asp-route-id="@Model.MaHD" class="btn btn-primary">Chỉnh sửa</a></p>

@@ -1,11 +1,61 @@
 ﻿@model DL.Models.ThongTinSan
+
 @{
     ViewBag.Title = "Thuê Sân";
 }
+<link href="~/Content/Site.css" rel="stylesheet" />
 @using (Html.BeginForm("ThueSan", "SanBong", FormMethod.Post))
 {
-    @Html.LabelFor(model => model.SoSan)
-    @Html.TextBoxFor(model => model.SoSan)
+    @Html.LabelFor(model => model.MaSan)
+    @Html.TextBoxFor(model => model.MaSan)
+
+    <div class="form-group">
+        <label>Thời gian thuê </label>
+        <select name="TimeThue">
+            <option></option>
+            <option>Thuê 60 phút</option>
+            <option>Thuê 90 phút</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Giờ bắt đầu</label>
+        <select name="GBD">
+            <option></option>
+            <option>8 giờ</option>
+            <option>9 giờ</option>
+            <option>10 giờ</option>
+            <option>11 giờ</option>
+            <option>12 giờ</option>
+            <option>13 giờ</option>
+            <option>14 giờ</option>
+            <option>15 giờ</option>
+            <option>16 giờ</option>
+            <option>17 giờ</option>
+            <option>18 giờ</option>
+            <option>19 giờ</option>
+            <option>20 giờ</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Giờ bắt đầu</label>
+        <select name="GBD">
+            <option></option>
+            <option>10 giờ</option>
+            <option>11 giờ</option>
+            <option>12 giờ</option>
+            <option>13 giờ</option>
+            <option>14 giờ</option>
+            <option>15 giờ</option>
+            <option>16 giờ</option>
+            <option>17 giờ</option>
+            <option>18 giờ</option>
+            <option>19 giờ</option>
+            <option>20 giờ</option>
+            <option>21 giờ</option>
+            <option>22 giờ</option>
+        </select>
+    </div>
     <br />
     <input type="submit" value="Thuê Sân" />
 }

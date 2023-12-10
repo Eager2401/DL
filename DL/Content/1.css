@@ -1,16 +1,12 @@
-﻿h2 {
+﻿h2, th, td {
     color: white;
     font-family: Merriweather;
 }
-
-th {
-    color: white;
-    font-family: Merriweather;
-}
-
-td {
-    color: white;
-    font-family: Merriweather;
+table{
+    background-color: white;
+    border-color: #141a06;
+    border-radius: 0px;
+    text-align: center;
 }
 
 p {
@@ -23,5 +19,10 @@ p {
 .button-row {
     display: flex;
     line-height: 40px;
-    margin-left: -5px;
+    margin-left: -48px;
+    padding: 15px 32px;
+}
+[type=submit]:not(:disabled) {
+    cursor: pointer;
+    border-radius: 16px;
 }

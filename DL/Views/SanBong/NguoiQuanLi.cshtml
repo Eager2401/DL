@@ -1,11 +1,45 @@
 ﻿@model IEnumerable<DL.Models.ThongTinSan>
 
 @{
-    ViewBag.Title = "Đăng Nhập Quản Lí";
+    ViewBag.Title = "Trang Quản trị";
 }
 <link href="~/Content/1.css" rel="stylesheet" />
 <h2>Danh Sách Sân Hiện Có</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Mã Sân
+        </th>
+        <th>
+            Giá thuê 60 phút
+        </th>
+        <th>
+            Giá thuê 90 phút
+        </th>
+        <th>
+            Tình trạng
+        </th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaThue60Phut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaThue90phut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrang)
+            </td>
+        </tr>
+    }
+
+</table>
 
 <div class="button-row">
     @using (Html.BeginForm("DongTatCaSan", "SanBong", FormMethod.Post))
@@ -16,5 +50,14 @@
     {
         <input type="submit" value=" Mở Cho Thuê Sân" />
     }
+    @using (Html.BeginForm("SuaThongTin", "SanBong", FormMethod.Post))
+    {
+        <input type="submit" value="Chỉnh sửa thông tin sân"/>
+    }
+    @using (Html.BeginForm("HoaDon","SanBong", FormMethod.Post))
+     {
+        <input type="submit" value="Danh Sách yêu cầu thuê"/>
+     }
 </div>
+
 

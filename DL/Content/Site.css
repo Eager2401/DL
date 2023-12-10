@@ -1,20 +1,38 @@
-﻿/* Set padding to keep content from hitting the edges */
-.body-content {
-    margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+﻿[type=submit]:not(:disabled) {
+    cursor: pointer;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-radius: 16px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+select {
+    word-wrap: normal;
+    padding-left: 17px;
+    padding-right: 30px;
+    padding-top: 5px;
+    margin-left: 8px;
+    border-radius:16px;
 }
+input {
+    margin: 0;
+    font-family: 'Merriweather';
+    font-size: 16px;
+    line-height: 23px;
+    margin-left: 16px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+}
+body {
+    font-family: Merriweather;
+    font-size: 18px;
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-white);
+    text-align: center;
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
 }

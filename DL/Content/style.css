@@ -19,15 +19,13 @@ p {
     font-size: 20px;
 }
 
-.gettingStartedTitle {
-    font-family: Merriweather;
-}
+
 
 header {
     font-family: Merriweather;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: normal;
     padding: 30px 10%;
 }
 li {

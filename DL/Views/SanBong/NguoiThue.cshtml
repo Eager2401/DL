@@ -5,14 +5,10 @@
 
 <link href="~/Content/1.css" rel="stylesheet" />
 <h2>Thông Tin Sân Hiện Có</h2>
-
-<p>
-    @Html.ActionLink("Thuê Sân", "ThueSan")
-</p>
 <table class="table table-bordered" >
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SoSan)
+            @Html.DisplayNameFor(model => model.MaSan)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GiaThue60Phut)
@@ -29,7 +25,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SoSan)
+                @Html.DisplayFor(modelItem => item.MaSan)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GiaThue60Phut)
@@ -44,4 +40,7 @@
     }
 
 </table>
-
+<p>
+    @Html.ActionLink("Thuê Sân", "ThueSan")
+    @Html.ActionLink("Thông tin hóa đơn", "HienThiHoaDon")
+</p>

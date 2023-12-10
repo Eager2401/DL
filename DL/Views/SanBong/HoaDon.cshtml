@@ -1,17 +1,57 @@
-﻿@{
-    Layout = null;
+﻿@model IEnumerable<DL.Models.HoaDon>
+@{ 
+    ViewBag.Tittle = "Hóa Đơn";
 }
 
 <!DOCTYPE html>
+<h2>Danh Sách Hóa Đơn</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Mã hóa đơn</th>
+        <th>Mã người thuê</th>
+        <th>Mã sân</th>
+        <th>Loại sân</th>
+        <th>Giờ bắt đầu</th>
+        <th>Giờ kết thúc</th>
+        <th>Tình trạng hóa đơn</th>
+        <th>Tính tiền</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaHD)</td>
+            <td>@Html.DisplayFor(modelItem => item.TaiKhoanUser)</td>
+            <td>@Html.DisplayFor(modelItem => item.MaSan)</td>
+            <td>@Html.DisplayFor(modelItem => item.loaiSan)</td>
+            <td>@Html.DisplayFor(modelItem=> item.GioBatDau)</td>
+            <td>@Html.DisplayFor(modelItem => item.GioKetThuc)</td>
+            <td>@Html.DisplayFor(modelItem => item.TinhTrangHD)</td>
+            <td>@Html.DisplayFor(modelItem => item.TinhTien)</td>
+            <td>
+                @if (item.TinhTrangHD == "Chưa bắt đầu đá")
+                {
+                    <a asp-controller="HoaDon" asp-action="HienThiHoaDon"
+                       aso-route-id="@item.MaHD" class="btn btn-primary btn-sm">
+                        Chỉnh sửa
+                    </a>
+                }
+                <a asp-controller="HoaDon" asp-action="HienThiHoaDon"
+                       aso-route-id="@item.MaHD" class="btn btn-info btn-sm">
+                    Xem chi tiết
+                </a>
+                @if(item.TinhTrangHD !="Chấp nhận" && item.TinhTrangHD !="Hủy")
+                {
+                    <a asp-controller="HoaDon" asp-action="ChapNhanHoaDon"
+                       aso-route-id="@item.MaHD" class="btn btn-success btn-sm">
+                        Chấp nhận
+                    </a>
+                    <a asp-controller="HoaDon" asp-action="HuyDon"
+                       aso-route-id="@item.MaHD" class="btn btn-danger btn-sm">
+                        Hủy
+                    </a>
+                }
+            </td>
+        </tr> 
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+    }
+</table>
